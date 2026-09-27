@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting & Strictness */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+
+    /* ════════════════════════════════════════════════════════
+     * Path Aliases
+     * ════════════════════════════════════════════════════════
+     *
+     * ⚠️ `baseUrl` REMOVED — deprecated in TS 5.9, removed in TS 7.0.
+     *
+     * WHY THIS WORKS:
+     *   Since TypeScript 4.1, `paths` no longer requires `baseUrl`
+     *   when each mapping starts with "./" (relative to this tsconfig).
+     *
+     *   With `moduleResolution: "bundler"`, this resolves correctly
+     *   both in tsc and in Vite.
+     *
+     * ⚠️ DO NOT add `"ignoreDeprecations": "6.0"`:
+     *   - It's valid ONLY in TS 6.x.
+     *   - TS 5.9 rejects it with TS5103 (Invalid value).
+     *   - "5.0" is accepted but does NOT silence the baseUrl warning.
+     */
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
